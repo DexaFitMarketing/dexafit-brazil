@@ -1,0 +1,28 @@
+# DexaFit Brasil
+
+> DexaFit Brasil is a precision health testing network launching in Brazil, offering DEXA body composition scans, VO2 Max testing, Resting Metabolic Rate (RMR) testing, and Bone Density assessments. Currently pre-launch — accepting early interest registrations.
+
+## What We Test
+
+- **DEXA Scan**: Gold-standard body composition analysis with 98% accuracy (+-2%). Measures lean mass, fat mass, visceral adipose tissue (VAT), and bone density simultaneously.
+- **VO2 Max**: Clinical cardiorespiratory fitness test. Research (JAMA 2018, Mandsager et al.) shows a 5x mortality gap between lowest and highest fitness quintiles.
+- **RMR (Resting Metabolic Rate)**: Measures actual caloric burn at rest via indirect calorimetry. Eliminates guesswork from nutrition planning.
+- **Bone Density**: Early detection of low bone density and osteoporosis risk. 1 in 2 women over 50 will experience a bone fracture (IOF).
+
+## Why It Matters
+
+- GLP-1 medications (Ozempic, Wegovy, Mounjaro) cause roughly 1 in 3 pounds of weight loss to come from lean mass — without testing, this is invisible.
+- Visceral fat (VAT) drives metabolic dysfunction, yet is undetectable without imaging.
+- Standard health checkups measure nothing that predicts long-term metabolic outcomes.
+- VO2 Max outpredicts smoking, diabetes, and hypertension as a mortality risk factor (122,007-person study, JAMA 2018).
+
+## About DexaFit
+
+- DexaFit is a precision health testing licensing network operating across the US and internationally since 2011.
+- Brasil expansion is the first major international launch.
+- Website: https://brasil.dexafit.com
+- Contact: marketing@dexafit.com
+
+## Status
+
+Pre-launch. Accepting interest registrations across Brazilian cities. No active testing locations in Brazil yet.

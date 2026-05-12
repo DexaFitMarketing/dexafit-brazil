@@ -1,0 +1,16 @@
+{
+  "name": "DexaFit Brasil",
+  "short_name": "DexaFit Brasil",
+  "description": "Precision health testing coming to Brazil",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1d1d1f",
+  "theme_color": "#46a5fc",
+  "icons": [
+    {
+      "src": "/assets/images/Brasil.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Dev tools — not for production
+archive/
+tweaks-panel.jsx
+index-v12.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
