@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DexaFit Brasil — Precision health testing coming to Brazil. DEXA body composition, VO₂ Max, RMR, and Bone Density. Know your four numbers." />
-  <title>DexaFit Brasil — Precision Health Testing</title>
+  <meta name="description" content="DexaFit Brasil — Testes clínicos de saúde de precisão chegando ao Brasil. DEXA, VO₂ Max, RMR e Densidade Óssea. Conheça seus quatro números." />
+  <title>DexaFit Brasil — Saúde de Precisão</title>
 
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K5FSXX73');</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR8N0B112X"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FR8N0B112X');</script>
 
   <link rel="canonical" href="https://brasil.dexafit.com/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://brasil.dexafit.com/" />
+  <link rel="alternate" hreflang="en" href="https://brasil.dexafit.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://brasil.dexafit.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://brasil.dexafit.com/" />
-  <meta property="og:title" content="DexaFit Brasil — Precision Health Testing" />
-  <meta property="og:description" content="DexaFit Brasil — Precision health testing coming to Brazil. DEXA body composition, VO₂ Max, RMR, and Bone Density. Know your four numbers." />
+  <meta property="og:title" content="DexaFit Brasil — Saúde de Precisão" />
+  <meta property="og:description" content="DexaFit Brasil — Testes clínicos de saúde de precisão chegando ao Brasil. DEXA, VO₂ Max, RMR e Densidade Óssea. Conheça seus quatro números." />
   <meta property="og:image" content="https://brasil.dexafit.com/assets/images/hero-bg.jpg" />
   <meta property="og:locale" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DexaFit Brasil — Precision Health Testing" />
-  <meta name="twitter:description" content="Precision health testing coming to Brazil. DEXA body composition, VO₂ Max, RMR, and Bone Density." />
+  <meta name="twitter:title" content="DexaFit Brasil — Saúde de Precisão" />
+  <meta name="twitter:description" content="Testes clínicos de saúde de precisão chegando ao Brasil. DEXA, VO₂ Max, RMR e Densidade Óssea." />
   <meta name="twitter:image" content="https://brasil.dexafit.com/assets/images/hero-bg.jpg" />
   <link rel="icon" type="image/png" href="/assets/images/Brasil.png" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -218,6 +221,11 @@
       background: rgba(76,175,80,0.22); color: #a8f0aa;
       padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(168,240,170,0.3);
     }
+    /* Good orange pill */
+    .dxf-results-card__item-status--good {
+      background: rgba(251,146,60,0.22); color: #fda96a;
+      border: 1px solid rgba(253,169,106,0.3);
+    }
 
     /* Hero logos */
     .dxf-hero__logos { display: flex; align-items: center; gap: 24px; padding: 28px 0 20px; max-width: var(--container); margin: 0 auto; overflow: hidden; }
@@ -395,12 +403,42 @@
 
     /* ── WHY IT MATTERS (gap-section) ── */
     .gap-section { padding: var(--section-pad) 0; background: var(--white); text-align: center; }
-    .gap-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; text-align: left; max-width: 900px; margin: 0 auto; }
-    .gap-card { background: var(--light); border-radius: var(--card-radius); padding: 36px 32px; border: 1px solid rgba(0,0,0,0.07); box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-    .gap-card .card-stat { font-family: var(--font-mono); font-size: 2.2rem; color: var(--black); margin-bottom: 12px; line-height: 1; }
-    .gap-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.65; }
-    .gap-card .citation { font-size: 0.75rem; color: var(--gray); opacity: 0.7; margin-top: 8px; display: block; }
+    .gap-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; text-align: left; max-width: 960px; margin: 0 auto; }
+    .gap-card {
+      background: var(--white); border-radius: var(--card-radius); padding: 36px 32px;
+      border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      display: flex; flex-direction: column; gap: 16px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .gap-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(70,165,252,0.14); }
+    .gap-card-icon {
+      width: 48px; height: 48px; background: rgba(70,165,252,0.1); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .gap-card-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .gap-card .card-stat { font-family: var(--font-mono); font-size: 2.2rem; color: var(--blue); margin-bottom: 0; line-height: 1; }
+    .gap-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.65; margin: 0; }
     @media (max-width: 768px) { .gap-section { padding: 64px 0; } .gap-cards { grid-template-columns: 1fr; gap: 16px; } }
+
+    /* ── CALCULATOR TABS ── */
+    .dxf-calc-tabs { display:flex; gap:8px; justify-content:center; margin-bottom:36px; flex-wrap:wrap; }
+    .dxf-calc-tab { padding:10px 24px; border:1.5px solid #ddd; border-radius:999px; background:#fff; font-size:14px; font-weight:600; color:#525252; cursor:pointer; transition:all .18s; font-family:var(--font); }
+    .dxf-calc-tab:hover { border-color:var(--blue); color:var(--blue); }
+    .dxf-calc-tab.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .dxf-calc-panel { display:none; }
+    .dxf-calc-panel.active { display:block; animation:dfIn .22s ease; }
+    .dxf-sex-toggle { display:flex; gap:8px; margin-bottom:20px; }
+    .dxf-sex-btn { flex:1; padding:10px; border:1.5px solid #ddd; border-radius:999px; background:#fff; font-size:13px; font-weight:600; color:#525252; cursor:pointer; transition:all .18s; font-family:var(--font); }
+    .dxf-sex-btn.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .dxf-age-btns { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
+    .dxf-age-btn { padding:7px 16px; border:1.5px solid #ddd; border-radius:999px; background:#fff; font-size:12px; font-weight:600; color:#525252; cursor:pointer; transition:all .18s; font-family:var(--font); }
+    .dxf-age-btn.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .dxf-calc-gradient-track { height:10px; border-radius:5px; position:relative; margin:8px 0 4px; }
+    .dxf-calc-marker { position:absolute; top:-4px; bottom:-4px; width:3px; background:#1d1d1f; border-radius:2px; transition:left .3s ease; transform:translateX(-50%); }
+    .dxf-vo2-result-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:20px 0; }
+    .dxf-vo2-result-row .dxf-calc-result-card { }
+    .dxf-pct-bar-track { height:8px; background:rgba(0,0,0,.07); border-radius:4px; overflow:hidden; margin:6px 0; }
+    .dxf-pct-bar-fill { height:100%; background:var(--blue); border-radius:4px; transition:width .3s ease; width:50%; }
 
     /* ── CALCULATOR ── */
     .dxf-calc-section { padding: 100px 0; background: var(--soft); }
@@ -522,10 +560,10 @@
         <img src="assets/images/Brasil.png" alt="DexaFit Brasil" />
       </a>
       <ul class="dxf-nb-tabs" role="list">
-        <li><a href="#why" class="dxf-nb-pill">Why It Matters</a></li>
-        <li><a href="#tests" class="dxf-nb-pill">How It Works</a></li>
-        <li><a href="#who-its-for" class="dxf-nb-pill">Who It's For</a></li>
-        <li><a href="#what-you-learn" class="dxf-nb-pill">What You Learn</a></li>
+        <li><a href="#why" class="dxf-nb-pill">Por Que Isso Importa</a></li>
+        <li><a href="#tests" class="dxf-nb-pill">Como Funciona</a></li>
+        <li><a href="#who-its-for" class="dxf-nb-pill">Para Quem É</a></li>
+        <li><a href="#what-you-learn" class="dxf-nb-pill">O Que Você Descobre</a></li>
       </ul>
       <a href="#get-started" class="dxf-nb-cta">Get DexaFit in Brasil</a>
     </div>
@@ -541,22 +579,22 @@
 
     <!-- Left: headline + CTA -->
     <div class="dxf-hero__content">
-      <span class="dxf-eyebrow dxf-eyebrow--white" style="justify-content:flex-start;"><img src="assets/images/bug-white.svg" class="dxf-eyebrow-icon" alt="" />DexaFit · Coming to Brasil</span>
+      <span class="dxf-eyebrow dxf-eyebrow--white" style="justify-content:flex-start;"><img src="assets/images/bug-white.svg" class="dxf-eyebrow-icon" alt="" />DexaFit · Chegando ao Brasil</span>
       <h1 class="dxf-display">
-        <span class="dxf-accent">Four numbers</span> decide<br>
-        whether you get leaner,<br>stronger, and healthier.
+        <span class="dxf-accent">Quatro números</span> decidem<br>
+        se você fica mais magro,<br>mais forte e mais saudável.
       </h1>
-      <p>Lean mass. Visceral fat. Bone density. VO₂ Max. Four clinical measurements in a single visit — the foundation every training plan, diet, and health decision should be built on.</p>
+      <p>Massa magra. Gordura visceral. Densidade óssea. VO₂ Max. Quatro medições clínicas em uma única visita. A base para cada plano de treino, dieta e decisão de saúde.</p>
       <div class="dxf-btn-group">
         <button class="dxf-btn" data-tf-popup="JPjo4AgU" data-tf-iframe-props="title=DexaFit Brasil" data-tf-medium="snippet">Get DexaFit in Brasil</button>
-        <a href="#tests" class="dxf-btn-ghost" style="color:#fff;border-color:rgba(255,255,255,0.45);">How It Works →</a>
+        <a href="#tests" class="dxf-btn-ghost" style="color:#fff;border-color:rgba(255,255,255,0.45);">Como Funciona →</a>
       </div>
     </div>
 
     <!-- Middle: app heatmap view — full height, face visible -->
     <div class="dxf-hero__app-image" aria-label="DexaFit app heatmap preview">
       <img class="dxf-hero__app-img"
-           src="assets/images/new%20sections/app_view-heat-map.png"
+           src="assets/images/app_view-heat-map.png"
            alt="DexaFit body composition heatmap report" />
     </div>
 
@@ -564,48 +602,48 @@
     <div class="dxf-hero__data" aria-label="Sample DexaFit results">
       <div class="dxf-vitality-card">
         <div class="dxf-vitality-card__header">
-          <p class="dxf-vitality-card__label">Your Body's True Age</p>
+          <p class="dxf-vitality-card__label">A Idade Real do Seu Corpo</p>
           <span class="dxf-vitality-card__name">Phil, 34</span>
         </div>
         <div class="dxf-vitality-card__ages">
           <div class="dxf-vitality-card__age">
             <span class="dxf-vitality-card__num">34</span>
-            <span class="dxf-vitality-card__age-caption">Chronological</span>
+            <span class="dxf-vitality-card__age-caption">Cronológica</span>
           </div>
           <span class="dxf-vitality-card__arrow">→</span>
           <div class="dxf-vitality-card__age">
             <span class="dxf-vitality-card__num dxf-vitality-card__num--bio">27</span>
-            <span class="dxf-vitality-card__age-caption">Biological</span>
+            <span class="dxf-vitality-card__age-caption">Biológica</span>
           </div>
         </div>
         <div class="dxf-vitality-card__badge">
           <span class="dxf-vitality-card__dot"></span>
-          7 Years Younger &nbsp;·&nbsp; Top 12%
+          7 Anos Mais Jovem &nbsp;·&nbsp; Top 12%
         </div>
       </div>
 
       <div class="dxf-results-card">
-        <p class="dxf-results-card__label">What DexaFit Revealed</p>
+        <p class="dxf-results-card__label">O Que DexaFit Revelou</p>
         <div class="dxf-results-card__grid">
           <div>
-            <p class="dxf-results-card__item-label">Lean Mass</p>
+            <p class="dxf-results-card__item-label">Massa Magra</p>
             <p class="dxf-results-card__item-value">154 lbs</p>
-            <span class="dxf-results-card__item-status">Excellent</span>
+            <span class="dxf-results-card__item-status">Excelente</span>
           </div>
           <div>
-            <p class="dxf-results-card__item-label">Visceral Fat</p>
+            <p class="dxf-results-card__item-label">Gord. Visceral</p>
             <p class="dxf-results-card__item-value">0.41 lbs</p>
-            <span class="dxf-results-card__item-status">Excellent</span>
+            <span class="dxf-results-card__item-status dxf-results-card__item-status--good">Bom</span>
           </div>
           <div>
             <p class="dxf-results-card__item-label">VO₂ Max</p>
-            <p class="dxf-results-card__item-value">85th %ile</p>
-            <span class="dxf-results-card__item-status">Excellent</span>
+            <p class="dxf-results-card__item-value">85º %il</p>
+            <span class="dxf-results-card__item-status">Excelente</span>
           </div>
           <div>
-            <p class="dxf-results-card__item-label">Bone Density</p>
+            <p class="dxf-results-card__item-label">Dens. Óssea</p>
             <p class="dxf-results-card__item-value" style="font-size:0.82rem;white-space:nowrap;">+1.2 T-score</p>
-            <span class="dxf-results-card__item-status">Excellent</span>
+            <span class="dxf-results-card__item-status">Excelente</span>
           </div>
         </div>
       </div>
@@ -651,27 +689,32 @@
 <section id="why" class="gap-section">
   <div class="container">
     <div class="dxf-section-header">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Why It Matters</span>
-      <h2>What Your Health Tools <span class="dxf-accent">Don't Measure</span></h2>
-      <p style="font-size: 1.1rem; color: var(--mid); max-width: 680px; margin: 20px auto 0; line-height: 1.65;">Weight on a scale. Steps on a watch. Markers in your blood. None of it measures what you're built from, what you're built for, or what fuels it all.</p>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Por Que Isso Importa</span>
+      <h2>O Que Suas Ferramentas de Saúde <span class="dxf-accent">Não Medem</span></h2>
+      <p style="font-size: 1.1rem; color: var(--mid); max-width: 680px; margin: 20px auto 0; line-height: 1.65;">Peso na balança. Passos no relógio. Marcadores no sangue. Nada disso mede do que você é feito, para o que está preparado ou o que alimenta tudo isso.</p>
     </div>
 
     <div class="gap-cards">
-      <div class="gap-card">
-        <div class="card-stat">~1 in 3</div>
-        <p>pounds lost on GLP-1 therapy may be lean mass — not fat. Without tracking, you won't know which.</p>
+      <div class="gap-card dxf-reveal" style="transition-delay:0s;">
+        <div class="gap-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><line x1="17" y1="12" x2="21" y2="12"/><line x1="19" y1="10" x2="19" y2="14"/></svg>
+        </div>
+        <div class="card-stat">~1 em 3</div>
+        <p>dos quilos perdidos com terapia GLP-1 podem ser massa magra, não gordura. Sem uma medição real, você não saberá o que está perdendo.</p>
       </div>
-      <div class="gap-card">
+      <div class="gap-card dxf-reveal" style="transition-delay:0.13s;">
+        <div class="gap-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
         <div class="card-stat">+55%</div>
-        <p>visceral fat linked to cardiovascular disease risk <span class="citation">(824,268 subjects)</span></p>
+        <p>a mais de risco cardiovascular por gordura visceral elevada. Nenhuma balança, relógio ou exame de sangue diz quanto você carrega.</p>
       </div>
-      <div class="gap-card">
-        <div class="card-stat">Silent</div>
-        <p>bone density erodes with no symptoms — most people learn from the x-ray after the fall</p>
-      </div>
-      <div class="gap-card">
-        <div class="card-stat">Estimated</div>
-        <p>your watch estimates VO₂ Max; a real test measures it — and the gap changes everything</p>
+      <div class="gap-card dxf-reveal" style="transition-delay:0.26s;">
+        <div class="gap-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="card-stat">Estimado</div>
+        <p>seu relógio estima o VO₂ Max. Um teste real mede de verdade. A diferença entre os dois muda tudo sobre como você treina e quanto você vive.</p>
       </div>
     </div>
 
@@ -688,9 +731,9 @@
 <section id="tests" class="dxf-section dxf-section--white">
   <div class="dxf-container">
     <div class="dxf-section-header dxf-reveal">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />How It Works</span>
-      <h2>See what you're <span class="dxf-accent">made of.</span></h2>
-      <p>Three tests. One complete picture. Each result tells you something a scale, smartwatch, or annual checkup never will.</p>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Como Funciona</span>
+      <h2>Veja do que você é <span class="dxf-accent">feito.</span></h2>
+      <p>Três testes. Uma imagem completa. Cada resultado revela algo que balança, smartwatch ou checkup anual jamais revelará.</p>
     </div>
 
     <div class="dxf-zigzag">
@@ -698,8 +741,8 @@
         <div class="dxf-zigzag__media"><img src="assets/images/dexa-scanner.gif" alt="DEXA body composition scanner" loading="lazy" /></div>
         <div class="dxf-zigzag__body">
           <p class="dxf-service-card__tag">DEXA Scan</p>
-          <h3>Know your <span class="dxf-accent">body.</span></h3>
-          <p>The clinical gold standard. <strong>Fat mass, lean muscle, visceral fat, and bone density</strong> measured at ±2% accuracy. Not an estimate — an actual measurement of what your body is made of, broken down by region.</p>
+          <h3>Conheça seu <span class="dxf-accent">corpo.</span></h3>
+          <p>O padrão clínico ouro. <strong>Massa gorda, massa magra, gordura visceral e densidade óssea</strong> medidos com precisão de ±2%. Não uma estimativa: uma medição real do que seu corpo é feito, por região.</p>
           <button class="dxf-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</button>
         </div>
       </div>
@@ -708,8 +751,8 @@
         <div class="dxf-zigzag__media"><img src="assets/images/vo2-max-test.gif" alt="VO₂ Max cardiovascular fitness test" loading="lazy" /></div>
         <div class="dxf-zigzag__body">
           <p class="dxf-service-card__tag">VO₂ Max Test</p>
-          <h3>Train smarter. <span class="dxf-accent">Live longer.</span></h3>
-          <p>The single most powerful predictor of longevity. A <strong>5× mortality gap</strong> separates the lowest and highest fitness quartile. Your watch estimates VO₂ Max — this measures it directly.</p>
+          <h3>Treine melhor. <span class="dxf-accent">Viva mais.</span></h3>
+          <p>O preditor mais poderoso de longevidade. Uma <strong>diferença de 5× na mortalidade</strong> separa o quartil de menor e maior condicionamento. Seu relógio estima o VO₂ Max. Este teste o mede diretamente.</p>
           <button class="dxf-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</button>
         </div>
       </div>
@@ -718,8 +761,8 @@
         <div class="dxf-zigzag__media"><img src="assets/images/rmr-test.gif" alt="Resting metabolic rate breath test" loading="lazy" /></div>
         <div class="dxf-zigzag__body">
           <p class="dxf-service-card__tag">RMR Test</p>
-          <h3>Stop guessing. <span class="dxf-accent">Start knowing.</span></h3>
-          <p>Generic formulas miss your actual metabolic rate by around 20%. The RMR test measures it directly from your breath — so every nutrition decision is built on what's real for you.</p>
+          <h3>Pare de adivinhar. <span class="dxf-accent">Comece a saber.</span></h3>
+          <p>Fórmulas genéricas erram sua taxa metabólica real em até 20%. O teste RMR mede diretamente pela sua respiração: cada decisão nutricional passa a ser baseada no que é real para você.</p>
           <button class="dxf-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</button>
         </div>
       </div>
@@ -727,7 +770,7 @@
 
     <div class="dxf-zigzag-footer dxf-reveal">
       <button class="dxf-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</button>
-      <a href="#get-started" class="dxf-btn-ghost">See all ways in →</a>
+      <a href="#get-started" class="dxf-btn-ghost">Veja todas as formas →</a>
     </div>
   </div>
 </section>
@@ -738,17 +781,17 @@
      ═══════════════════════════════════════════════════ -->
 <section id="who-its-for" class="df-who-section">
   <div class="dxf-container" style="text-align:center; margin-bottom: 32px;">
-    <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Who It's For</span>
-    <h2>Built for <span class="dxf-accent">every body.</span></h2>
+    <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Para Quem É</span>
+    <h2>Para <span class="dxf-accent">cada corpo.</span></h2>
   </div>
 
   <div class="df-tabs-wrap" role="tablist">
-    <button class="df-who-tab df-active" data-seg="1" role="tab">Lose Weight</button>
-    <button class="df-who-tab" data-seg="2" role="tab">Build &amp; Perform</button>
-    <button class="df-who-tab" data-seg="3" role="tab">Women's Health</button>
-    <button class="df-who-tab" data-seg="4" role="tab">Bone Health</button>
-    <button class="df-who-tab" data-seg="5" role="tab">Live Longer</button>
-    <button class="df-who-tab" data-seg="6" role="tab">Just Getting Started</button>
+    <button class="df-who-tab df-active" data-seg="1" role="tab">Emagrecer</button>
+    <button class="df-who-tab" data-seg="2" role="tab">Desenvolver &amp; Performar</button>
+    <button class="df-who-tab" data-seg="3" role="tab">Saúde Feminina</button>
+    <button class="df-who-tab" data-seg="4" role="tab">Saúde Óssea</button>
+    <button class="df-who-tab" data-seg="5" role="tab">Viver Mais</button>
+    <button class="df-who-tab" data-seg="6" role="tab">Começando Agora</button>
   </div>
 
   <div class="df-panels">
@@ -759,27 +802,27 @@
         <div class="df-panel-bg df-bg-1"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Lose Weight</div>
-          <h3>Stop guessing.<br>Start knowing.</h3>
+          <div class="df-panel-pill">Emagrecer</div>
+          <h3>Pare de adivinhar.<br>Comece a saber.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">Visceral Fat Risk</div>
+            <div class="df-data-card-label">Risco de Gordura Visceral</div>
             <div class="df-data-card-value">+55<span>%</span></div>
-            <div class="df-data-card-sub">Elevated visceral fat is one of the strongest predictors of cardiovascular disease — only DEXA measures it accurately.</div>
+            <div class="df-data-card-sub">A gordura visceral elevada é um dos preditores mais fortes de doenças cardiovasculares. Apenas o DEXA a mede com precisão.</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">Weight loss &amp; GLP-1 users</div>
-        <h2>You don't have a weight problem. You might have a <em>composition problem.</em></h2>
+        <div class="df-panel-eyebrow">Perda de peso e usuários de GLP-1</div>
+        <h2>Você não tem um problema de peso. Pode ter um problema de <em>composição.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Your scale can't tell you whether what you lost was fat or muscle. DexaFit can.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>On GLP-1 medication? Studies show ~30% of weight lost may be lean mass. Know where you stand.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Smart scales carry error margins of 10% or more. DEXA is the clinical gold standard.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Sua balança não consegue dizer se o que você perdeu foi gordura ou músculo. DexaFit consegue.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Usando medicação GLP-1? Estudos mostram que ~30% do peso perdido pode ser massa magra. Saiba onde você está.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Balanças inteligentes têm margem de erro de 10% ou mais. DEXA é o padrão clínico ouro.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
+          <span class="df-tests-label">Testes recomendados</span>
           <span class="df-test-tag">DEXA Body Composition</span>
           <span class="df-test-tag">RMR</span>
           <span class="df-test-tag">VO2 Max</span>
@@ -794,27 +837,27 @@
         <div class="df-panel-bg df-bg-2"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Build &amp; Perform</div>
-          <h3>Train with precision.<br>Measure with it too.</h3>
+          <div class="df-panel-pill">Desenvolver &amp; Performar</div>
+          <h3>Treine com precisão.<br>Meça também.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">Lean Muscle Precision</div>
+            <div class="df-data-card-label">Precisão de Massa Magra</div>
             <div class="df-data-card-value">±1<span>%</span></div>
-            <div class="df-data-card-sub">DEXA regional lean mass accuracy. No wearable or scale comes close.</div>
+            <div class="df-data-card-sub">Precisão do DEXA em massa magra regional. Nenhum wearable ou balança chega perto.</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">Athletes, gym-goers &amp; competitors</div>
-        <h2>Because 'Good Enough' doesn't win. <em>Measure the margin.</em></h2>
+        <div class="df-panel-eyebrow">Atletas, praticantes de academia e competidores</div>
+        <h2>Porque "bom o suficiente" não vence. <em>Meça a margem.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>VO2 Max: the performance ceiling your wearable estimates. DexaFit measures it directly.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Regional lean mass by limb and trunk — the structural detail no wearable or scale can see.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>RMR tells you what your body actually burns at rest. Fuel training with data, not calculators.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>VO₂ Max: o teto de performance que seu wearable estima. DexaFit mede diretamente.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Massa magra regional por membro e tronco: o detalhe estrutural que nenhum wearable ou balança vê.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>RMR diz o que seu corpo realmente queima em repouso. Alimente o treino com dados, não com calculadoras.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
+          <span class="df-tests-label">Testes recomendados</span>
           <span class="df-test-tag">DEXA Body Composition</span>
           <span class="df-test-tag">VO2 Max</span>
           <span class="df-test-tag">RMR</span>
@@ -829,29 +872,29 @@
         <div class="df-panel-bg df-bg-3"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Women's Health</div>
-          <h3>Your body is changing.<br>The data explains why.</h3>
+          <div class="df-panel-pill">Saúde Feminina</div>
+          <h3>Seu corpo está mudando.<br>Os dados explicam o porquê.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">Lean Mass Maintained</div>
+            <div class="df-data-card-label">Massa Magra Mantida</div>
             <div class="df-data-card-value">96<span>%</span></div>
-            <div class="df-data-card-sub">Returning DexaFit members consistently maintained lean mass — even through hormonal change.</div>
+            <div class="df-data-card-sub">Membros recorrentes do DexaFit mantiveram massa magra de forma consistente, mesmo durante mudanças hormonais.</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">Perimenopause &amp; hormonal change</div>
-        <h2>The most important changes are the ones <em>you can't see.</em></h2>
+        <div class="df-panel-eyebrow">Perimenopausa e mudanças hormonais</div>
+        <h2>As mudanças mais importantes são as que <em>você não vê.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Menopause shifts fat distribution toward visceral stores. DEXA is the only way to measure it.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Bone density decline accelerates around menopause. An 8-minute scan gives you a number you can act on.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Your metabolism changes in perimenopause. RMR testing shows exactly how much.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>A menopausa desloca a gordura para reservas viscerais. DEXA é o único jeito de medir isso.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>A perda de densidade óssea acelera na menopausa. Um exame de 8 minutos dá um número para você agir.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Seu metabolismo muda na perimenopausa. O teste RMR mostra exatamente quanto.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
+          <span class="df-tests-label">Testes recomendados</span>
           <span class="df-test-tag">DEXA Body Composition</span>
-          <span class="df-test-tag">Bone Mineral Density</span>
+          <span class="df-test-tag">Densidade Mineral Óssea</span>
           <span class="df-test-tag">RMR</span>
         </div>
         <a href="#" class="df-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</a>
@@ -864,28 +907,28 @@
         <div class="df-panel-bg df-bg-4"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Bone Health</div>
-          <h3>Strong bones aren't<br>visible in the mirror.</h3>
+          <div class="df-panel-pill">Saúde Óssea</div>
+          <h3>Ossos fortes não<br>aparecem no espelho.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">Bone Density Maintained</div>
+            <div class="df-data-card-label">Densidade Óssea Mantida</div>
             <div class="df-data-card-value">91<span>%</span></div>
-            <div class="df-data-card-sub">Returning DexaFit members consistently maintained or improved bone mineral density.</div>
+            <div class="df-data-card-sub">Membros recorrentes do DexaFit mantiveram ou melhoraram a densidade mineral óssea de forma consistente.</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">Bone health &amp; older adults</div>
-        <h2>Your bone loss is silent — <em>until it isn't.</em></h2>
+        <div class="df-panel-eyebrow">Saúde óssea e adultos mais velhos</div>
+        <h2>Sua perda óssea é silenciosa. <em>Até que não seja mais.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 in 2 women over 50 will fracture a bone from osteoporosis. A baseline changes that.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>8 minutes. Comfortable. A clinical picture of where your bones stand today.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Staying strong as you age isn't luck. It's something you measure and protect.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 em cada 2 mulheres com mais de 50 anos fraturará um osso por osteoporose. Uma linha de base muda isso.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>8 minutos. Confortável. Uma imagem clínica de como seus ossos estão hoje.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Continuar forte com o envelhecimento não é sorte. É algo que você mede e protege.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
-          <span class="df-test-tag">Bone Mineral Density</span>
+          <span class="df-tests-label">Testes recomendados</span>
+          <span class="df-test-tag">Densidade Mineral Óssea</span>
           <span class="df-test-tag">DEXA Body Composition</span>
         </div>
         <a href="#" class="df-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</a>
@@ -898,31 +941,31 @@
         <div class="df-panel-bg df-bg-5"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Live Longer</div>
-          <h3>Your feedback loop<br>starts here.</h3>
+          <div class="df-panel-pill">Viver Mais</div>
+          <h3>Seu ciclo de feedback<br>começa aqui.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">VO2 Max Mortality Gap</div>
+            <div class="df-data-card-label">Diferença na Mortalidade por VO₂ Max</div>
             <div class="df-data-card-value">5×<span></span></div>
-            <div class="df-data-card-sub">Difference in all-cause mortality between least fit and most fit quintiles (Mandsager et al., JAMA 2018).</div>
+            <div class="df-data-card-sub">Diferença na mortalidade por todas as causas entre os quintis de menor e maior condicionamento (Mandsager et al., JAMA 2018).</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">Longevity &amp; healthspan</div>
-        <h2>Wearables measure signals. We <em>measure structure.</em></h2>
+        <div class="df-panel-eyebrow">Longevidade e healthspan</div>
+        <h2>Wearables medem sinais. Nós <em>medimos estrutura.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Elevated visceral fat is associated with significantly higher cardiovascular risk. Your BMI cannot see it.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>VO₂ Max outpredicted smoking, diabetes, and hypertension as a mortality risk factor (122,007-person study).</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Every retest sharpens the picture. Your data is benchmarked against a growing clinical dataset.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Gordura visceral elevada está associada a risco cardiovascular significativamente maior. Seu IMC não a enxerga.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>VO₂ Max superou tabagismo, diabetes e hipertensão como fator de risco de mortalidade (estudo com 122.007 pessoas).</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cada novo teste aprimora o quadro. Seus dados são comparados a um banco de dados clínico crescente.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
+          <span class="df-tests-label">Testes recomendados</span>
           <span class="df-test-tag">DEXA Body Composition</span>
           <span class="df-test-tag">VO2 Max</span>
           <span class="df-test-tag">RMR</span>
-          <span class="df-test-tag">Bone Mineral Density</span>
+          <span class="df-test-tag">Densidade Mineral Óssea</span>
         </div>
         <a href="#" class="df-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</a>
       </div>
@@ -934,27 +977,27 @@
         <div class="df-panel-bg df-bg-6"></div>
         <div class="df-panel-overlay"></div>
         <div class="df-panel-caption">
-          <div class="df-panel-pill">Just Getting Started</div>
-          <h3>You don't need a goal.<br>You need a baseline.</h3>
+          <div class="df-panel-pill">Começando Agora</div>
+          <h3>Você não precisa de um objetivo.<br>Precisa de uma linha de base.</h3>
         </div>
         <div class="df-data-cards">
           <div class="df-data-card">
-            <div class="df-data-card-label">Test Duration</div>
+            <div class="df-data-card-label">Duração do Teste</div>
             <div class="df-data-card-value">8<span>min</span></div>
-            <div class="df-data-card-sub">One test. Fat, muscle, bone — all measured.</div>
+            <div class="df-data-card-sub">Um teste. Gordura, músculo e osso: tudo medido.</div>
           </div>
         </div>
       </div>
       <div class="df-panel-content">
-        <div class="df-panel-eyebrow">General wellness &amp; first-timers</div>
-        <h2>8 minutes gives you <em>a complete picture of your body.</em></h2>
+        <div class="df-panel-eyebrow">Bem-estar geral e iniciantes</div>
+        <h2>8 minutos dão <em>uma imagem completa do seu corpo.</em></h2>
         <div class="df-hooks">
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>No specific goal needed. One DEXA baseline makes every health decision smarter.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Routine checkups raise questions. DexaFit answers them — with data your doctor can actually use.</div>
-          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Start here. Training, nutrition, goals — everything makes more sense after.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Nenhum objetivo específico necessário. Uma linha de base DEXA torna cada decisão de saúde mais inteligente.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Checkups de rotina levantam perguntas. DexaFit as responde com dados que seu médico pode usar.</div>
+          <div class="df-hook"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#46a5fc" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#46a5fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Comece aqui. Treino, nutrição, objetivos: tudo faz mais sentido depois.</div>
         </div>
         <div class="df-tests">
-          <span class="df-tests-label">Recommended tests</span>
+          <span class="df-tests-label">Testes recomendados</span>
           <span class="df-test-tag">DEXA Body Composition</span>
           <span class="df-test-tag">RMR</span>
         </div>
@@ -972,20 +1015,20 @@
 <section id="what-you-learn" class="dxf-section dxf-section--soft">
   <div class="container" style="margin-bottom: 48px;">
     <div class="dxf-section-header">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />What You Learn</span>
-      <h2>What your body is trying <span class="dxf-accent">to tell you.</span></h2>
-      <p>Discover what DexaFit measures — and why knowing changes everything.</p>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />O Que Você Descobre</span>
+      <h2>O que seu corpo está tentando <span class="dxf-accent">te dizer.</span></h2>
+      <p>Descubra o que DexaFit mede e por que saber muda tudo.</p>
     </div>
   </div>
 
   <div class="dbs-wrap">
     <div class="dbs-tabs" role="tablist">
-      <button class="dbs-tab active" data-id="intro">Overview</button>
-      <button class="dbs-tab" data-id="cardio">Cardio Fitness</button>
-      <button class="dbs-tab" data-id="body">Body Composition</button>
-      <button class="dbs-tab" data-id="visceral">Visceral Fat</button>
-      <button class="dbs-tab" data-id="rmr">Metabolism</button>
-      <button class="dbs-tab" data-id="bone">Bone Density</button>
+      <button class="dbs-tab active" data-id="intro">Visão Geral</button>
+      <button class="dbs-tab" data-id="cardio">Aptidão Cardíaca</button>
+      <button class="dbs-tab" data-id="body">Composição Corporal</button>
+      <button class="dbs-tab" data-id="visceral">Gordura Visceral</button>
+      <button class="dbs-tab" data-id="rmr">Metabolismo</button>
+      <button class="dbs-tab" data-id="bone">Densidade Óssea</button>
     </div>
 
     <div class="dbs-body">
@@ -1021,19 +1064,19 @@
 
           <!-- Chips -->
           <div class="dbs-chip" data-metric="cardio" data-pos="top:6%;left:4%" data-pos-mobile="top:6%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">VO2 Max</span><span class="dbs-chip-value">49.4</span><span class="dbs-chip-unit">· top 22%</span></div></div>
-          <div class="dbs-chip" data-metric="cardio" data-pos="top:4%;left:50%" data-pos-mobile="top:16%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Bio age</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">-7 years</span></div></div>
+          <div class="dbs-chip" data-metric="cardio" data-pos="top:4%;left:50%" data-pos-mobile="top:16%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Idade Bio</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">-7 anos</span></div></div>
 
-          <div class="dbs-chip" data-metric="body" data-pos="top:8%;left:4%" data-pos-mobile="top:6%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Body Fat</span><span class="dbs-chip-value">13.1%</span><span class="dbs-chip-unit">· athletic</span></div></div>
-          <div class="dbs-chip" data-metric="body" data-pos="top:19%;left:4%" data-pos-mobile="top:18%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Lean Mass</span><span class="dbs-chip-value">172</span><span class="dbs-chip-unit">lbs · Excellent</span></div></div>
+          <div class="dbs-chip" data-metric="body" data-pos="top:8%;left:4%" data-pos-mobile="top:6%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Gordura</span><span class="dbs-chip-value">13.1%</span><span class="dbs-chip-unit">· atlético</span></div></div>
+          <div class="dbs-chip" data-metric="body" data-pos="top:19%;left:4%" data-pos-mobile="top:18%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Massa Magra</span><span class="dbs-chip-value">172</span><span class="dbs-chip-unit">lbs · Excelente</span></div></div>
 
-          <div class="dbs-chip" data-metric="visceral" data-pos="top:36%;left:4%" data-pos-mobile="top:28%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Visceral fat</span><span class="dbs-chip-value">0.64</span><span class="dbs-chip-unit">· Excellent</span></div></div>
-          <div class="dbs-chip" data-metric="visceral" data-pos="top:28%;right:5%" data-pos-mobile="top:40%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">CVD risk</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">Excellent</span></div></div>
+          <div class="dbs-chip" data-metric="visceral" data-pos="top:36%;left:4%" data-pos-mobile="top:28%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Gord. Visceral</span><span class="dbs-chip-value">0.64</span><span class="dbs-chip-unit">· Excelente</span></div></div>
+          <div class="dbs-chip" data-metric="visceral" data-pos="top:28%;right:5%" data-pos-mobile="top:40%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Risco CVD</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">Excelente</span></div></div>
 
-          <div class="dbs-chip" data-metric="rmr" data-pos="top:11%;right:5%" data-pos-mobile="top:6%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Burns</span><span class="dbs-chip-value">1847</span><span class="dbs-chip-unit">kcal/day</span></div></div>
-          <div class="dbs-chip" data-metric="rmr" data-pos="top:31%;right:5%" data-pos-mobile="top:20%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Fuel source</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">Fat · 68%</span></div></div>
+          <div class="dbs-chip" data-metric="rmr" data-pos="top:11%;right:5%" data-pos-mobile="top:6%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Queima</span><span class="dbs-chip-value">1847</span><span class="dbs-chip-unit">kcal/dia</span></div></div>
+          <div class="dbs-chip" data-metric="rmr" data-pos="top:31%;right:5%" data-pos-mobile="top:20%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Fonte</span><span class="dbs-chip-value" style="color:#388e3c;font-size:11px">Gordura · 68%</span></div></div>
 
-          <div class="dbs-chip" data-metric="bone" data-pos="top:60%;left:4%" data-pos-mobile="top:52%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">T-Score</span><span class="dbs-chip-value">+4.1</span><span class="dbs-chip-unit">· 98th %</span></div></div>
-          <div class="dbs-chip" data-metric="bone" data-pos="top:71%;left:4%" data-pos-mobile="top:64%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Z-Score</span><span class="dbs-chip-value">+3.3</span><span class="dbs-chip-unit">· strong</span></div></div>
+          <div class="dbs-chip" data-metric="bone" data-pos="top:60%;left:4%" data-pos-mobile="top:52%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">T-Score</span><span class="dbs-chip-value">+4.1</span><span class="dbs-chip-unit">· 98º %</span></div></div>
+          <div class="dbs-chip" data-metric="bone" data-pos="top:71%;left:4%" data-pos-mobile="top:64%;left:4%"><div class="dbs-chip-inner"><div class="dbs-chip-dot"></div><span class="dbs-chip-label">Z-Score</span><span class="dbs-chip-value">+3.3</span><span class="dbs-chip-unit">· forte</span></div></div>
 
           <!-- Hotspots -->
           <div class="dbs-hotspot" data-id="cardio"><div class="dbs-hotspot-ring"></div><div class="dbs-hotspot-dot"></div></div>
@@ -1054,55 +1097,55 @@
       <!-- RIGHT: content panel -->
       <div class="dbs-panel">
         <div id="view-intro" class="dbs-intro">
-          <h2>Your body has been trying<br>to tell you <em>something.</em></h2>
-          <p>Most tools measure how you feel. DexaFit measures what's actually there — clinically, precisely, in 8 minutes. Tap a dot on the body or choose a metric below.</p>
+          <h2>Seu corpo tem tentado<br>te dizer <em>algo.</em></h2>
+          <p>A maioria das ferramentas mede como você se sente. DexaFit mede o que está realmente lá: com precisão clínica, em 8 minutos. Toque um ponto no corpo ou escolha uma métrica abaixo.</p>
           <div class="dbs-metrics">
-            <div class="dbs-metric" data-target="cardio"><div class="dbs-metric-label">VO2 Max</div><div class="dbs-metric-title">Cardio Fitness</div><div class="dbs-metric-sub">Your #1 longevity number</div></div>
-            <div class="dbs-metric" data-target="body"><div class="dbs-metric-label">DEXA</div><div class="dbs-metric-title">Body Composition</div><div class="dbs-metric-sub">Fat vs. muscle — precisely</div></div>
-            <div class="dbs-metric" data-target="visceral"><div class="dbs-metric-label">DEXA · VAT</div><div class="dbs-metric-title">Visceral Fat</div><div class="dbs-metric-sub">The hidden cardiovascular risk</div></div>
-            <div class="dbs-metric" data-target="rmr"><div class="dbs-metric-label">RMR Test</div><div class="dbs-metric-title">Metabolism</div><div class="dbs-metric-sub">Calories your body actually burns</div></div>
-            <div class="dbs-metric" data-target="bone"><div class="dbs-metric-label">BMD</div><div class="dbs-metric-title">Bone Density</div><div class="dbs-metric-sub">Silent aging, caught early</div></div>
+            <div class="dbs-metric" data-target="cardio"><div class="dbs-metric-label">VO₂ Max</div><div class="dbs-metric-title">Aptidão Cardíaca</div><div class="dbs-metric-sub">Seu principal número de longevidade</div></div>
+            <div class="dbs-metric" data-target="body"><div class="dbs-metric-label">DEXA</div><div class="dbs-metric-title">Composição Corporal</div><div class="dbs-metric-sub">Gordura vs. músculo, com precisão</div></div>
+            <div class="dbs-metric" data-target="visceral"><div class="dbs-metric-label">DEXA · VAT</div><div class="dbs-metric-title">Gordura Visceral</div><div class="dbs-metric-sub">O risco cardiovascular oculto</div></div>
+            <div class="dbs-metric" data-target="rmr"><div class="dbs-metric-label">RMR Test</div><div class="dbs-metric-title">Metabolismo</div><div class="dbs-metric-sub">As calorias que seu corpo realmente queima</div></div>
+            <div class="dbs-metric" data-target="bone"><div class="dbs-metric-label">BMD</div><div class="dbs-metric-title">Densidade Óssea</div><div class="dbs-metric-sub">Envelhecimento silencioso, detectado cedo</div></div>
           </div>
         </div>
 
         <div id="view-cardio" class="dbs-card-view" style="display:none">
-          <div class="dbs-card-eyebrow">VO2 Max · Cardio Fitness</div>
-          <h3>This one number predicts how long — and <em>how well — you'll live.</em></h3>
-          <p>VO2 Max measures how efficiently your body uses oxygen. It's the strongest predictor of all-cause mortality ever studied — stronger than smoking, blood pressure, or cholesterol (Mandsager et al., JAMA 2018).</p>
-          <div class="dbs-stat"><div class="dbs-stat-num">5×</div><div class="dbs-stat-text">The least-fit quintile dies at nearly 5× the rate of the most fit — in a study of 122,007 patients.</div></div>
-          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Test my VO2 Max <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="dbs-card-eyebrow">VO₂ Max · Aptidão Cardíaca</div>
+          <h3>Este número prediz quanto tempo e com que <em>qualidade você vai viver.</em></h3>
+          <p>VO₂ Max mede com que eficiência seu corpo usa oxigênio. É o preditor mais forte de mortalidade por todas as causas já estudado, mais forte que tabagismo, pressão arterial ou colesterol (Mandsager et al., JAMA 2018).</p>
+          <div class="dbs-stat"><div class="dbs-stat-num">5×</div><div class="dbs-stat-text">O quintil de menor condicionamento morre a quase 5× a taxa do mais fit, em um estudo com 122.007 pacientes.</div></div>
+          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Testar meu VO₂ Max <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
 
         <div id="view-body" class="dbs-card-view" style="display:none">
-          <div class="dbs-card-eyebrow">DEXA · Body Composition</div>
-          <h3>Your scale shows you one number. DEXA shows you <em>what it's made of.</em></h3>
-          <p>Fat mass. Lean mass. Bone mass. By region. Two people can weigh the same and have completely different bodies — different risks, different metabolisms, different needs.</p>
-          <div class="dbs-stat"><div class="dbs-stat-num">&gt;10%</div><div class="dbs-stat-text">Error margin on smart scales vs. ±2% clinical accuracy from DEXA — the gold standard for body composition worldwide.</div></div>
-          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">See my real numbers <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="dbs-card-eyebrow">DEXA · Composição Corporal</div>
+          <h3>Sua balança mostra um número. DEXA mostra <em>do que ele é feito.</em></h3>
+          <p>Massa gorda. Massa magra. Massa óssea. Por região. Duas pessoas podem pesar o mesmo e ter corpos completamente diferentes: riscos, metabolismos e necessidades distintos.</p>
+          <div class="dbs-stat"><div class="dbs-stat-num">&gt;10%</div><div class="dbs-stat-text">Margem de erro em balanças inteligentes vs. precisão clínica de ±2% do DEXA: o padrão ouro mundial para composição corporal.</div></div>
+          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Ver meus números reais <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
 
         <div id="view-visceral" class="dbs-card-view" style="display:none">
-          <div class="dbs-card-eyebrow">DEXA · Visceral Fat</div>
-          <h3>This fat lives inside you. Your mirror and BMI <em>can't find it.</em></h3>
-          <p>Visceral fat wraps around your liver, kidneys, and heart — releasing inflammatory signals around the clock. DEXA is the only clinical-grade tool outside a hospital that actually measures it.</p>
-          <div class="dbs-stat"><div class="dbs-stat-num">+55%</div><div class="dbs-stat-text">Elevated visceral fat is associated with significantly higher cardiovascular disease risk — in a meta-analysis of over 824,000 people.</div></div>
-          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Check my visceral fat <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="dbs-card-eyebrow">DEXA · Gordura Visceral</div>
+          <h3>Essa gordura vive dentro de você. Seu espelho e IMC <em>não a encontram.</em></h3>
+          <p>A gordura visceral envolve seu fígado, rins e coração, liberando sinais inflamatórios o tempo todo. DEXA é o único instrumento de nível clínico fora de um hospital que realmente a mede.</p>
+          <div class="dbs-stat"><div class="dbs-stat-num">+55%</div><div class="dbs-stat-text">Gordura visceral elevada está associada a risco cardiovascular significativamente maior, em uma metanálise com mais de 824.000 pessoas.</div></div>
+          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Verificar minha gordura visceral <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
 
         <div id="view-rmr" class="dbs-card-view" style="display:none">
-          <div class="dbs-card-eyebrow">RMR · Resting Metabolic Rate</div>
-          <h3>You're probably eating for a metabolism <em>you don't have.</em></h3>
-          <p>RMR measures exactly how many calories your body burns at rest. Online calculators can differ by 20–30%. That gap explains why diets fail, plateaus happen, and why eating less doesn't always work.</p>
-          <div class="dbs-stat"><div class="dbs-stat-num">±20%</div><div class="dbs-stat-text">Typical gap between estimated and measured metabolic rate — a difference that determines whether your nutrition plan actually works.</div></div>
-          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Measure my metabolism <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="dbs-card-eyebrow">RMR · Taxa Metabólica Basal</div>
+          <h3>Você provavelmente está comendo para um metabolismo <em>que não tem.</em></h3>
+          <p>RMR mede exatamente quantas calorias seu corpo queima em repouso. Calculadoras online podem errar em 20 a 30%. Essa diferença explica por que dietas falham, platôs acontecem e comer menos nem sempre funciona.</p>
+          <div class="dbs-stat"><div class="dbs-stat-num">±20%</div><div class="dbs-stat-text">Diferença típica entre taxa metabólica estimada e medida: uma diferença que determina se seu plano nutricional realmente funciona.</div></div>
+          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Medir meu metabolismo <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
 
         <div id="view-bone" class="dbs-card-view" style="display:none">
-          <div class="dbs-card-eyebrow">BMD · Bone Density</div>
-          <h3>Your bones age in silence. <em>Until they don't.</em></h3>
-          <p>Osteoporosis has no symptoms. No warning signs. The first sign is often a fracture. By the time it shows on a regular X-ray, you've already lost significant density.</p>
-          <div class="dbs-stat"><div class="dbs-stat-num">1 in 2</div><div class="dbs-stat-text">Women over 50 will experience a bone fracture due to osteoporosis. Most learn their density is low the same way: from the X-ray after the fall.</div></div>
-          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Test my bone density <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="dbs-card-eyebrow">DMO · Densidade Óssea</div>
+          <h3>Seus ossos envelhecem em silêncio. <em>Até que não envelhecem mais.</em></h3>
+          <p>A osteoporose não tem sintomas. Nenhum sinal de alerta. O primeiro sinal costuma ser uma fratura. Quando aparece em um raio-X comum, você já perdeu densidade significativa.</p>
+          <div class="dbs-stat"><div class="dbs-stat-num">1 em 2</div><div class="dbs-stat-text">Mulheres com mais de 50 anos terão uma fratura óssea por osteoporose. A maioria fica sabendo da densidade baixa da mesma forma: pelo raio-X após a queda.</div></div>
+          <a href="#" class="dbs-cta" data-tf-popup="JPjo4AgU">Testar minha densidade óssea <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
     </div>
@@ -1116,45 +1159,112 @@
 <section id="calculator" class="dxf-calc-section">
   <div class="container">
     <div class="dxf-section-header">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Test Your Buffer</span>
-      <h2>Visualize your <span class="dxf-accent">metabolic defense.</span></h2>
-      <p>Move the sliders to see how your muscle mass protects you against the risks of visceral fat. Where do you sit on the threshold?</p>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Teste Seu Escudo</span>
+      <h2>Veja o Quanto Sua <span class="dxf-accent">Massa Magra Está Protegendo Você</span></h2>
     </div>
 
-    <div class="dxf-calc-wrap">
-      <p class="dxf-calc-intro">Your muscle acts as a metabolic buffer against visceral fat. The log₁₀(lean mass ÷ visceral fat) ratio captures this balance in a single number — comparable across body sizes.</p>
+    <!-- Calculator tabs -->
+    <div class="dxf-calc-tabs">
+      <button class="dxf-calc-tab active" data-panel="body-comp">Composição Corporal</button>
+      <button class="dxf-calc-tab" data-panel="metabolic-buffer">Escudo Metabólico</button>
+      <button class="dxf-calc-tab" data-panel="vo2max">VO₂ Max</button>
+    </div>
+
+    <!-- ── PANEL 1: BODY COMP ── -->
+    <div class="dxf-calc-wrap dxf-calc-panel active" id="panel-body-comp">
+      <p class="dxf-calc-intro">Massa magra e gordura corporal: medidas com precisão, não estimadas. Veja como sua composição se compara à sua faixa etária.</p>
+
+      <div class="dxf-sex-toggle">
+        <button class="dxf-sex-btn active" id="bc-btn-m" onclick="setBCSex('male')">Masculino</button>
+        <button class="dxf-sex-btn" id="bc-btn-f" onclick="setBCSex('female')">Feminino</button>
+      </div>
 
       <div class="dxf-calc-inputs">
         <div class="dxf-calc-input-group">
           <div class="dxf-calc-input-header">
-            <span>Lean mass</span>
+            <span>Idade</span>
+            <strong id="bc-age-val">35</strong>
+          </div>
+          <input type="range" id="bc-age" min="18" max="75" step="1" value="35" class="dxf-calc-slider" oninput="updateBC()">
+          <div class="dxf-calc-input-range"><span>18</span><span>75</span></div>
+        </div>
+        <div class="dxf-calc-input-group">
+          <div class="dxf-calc-input-header">
+            <span>Peso total</span>
+            <strong id="bc-weight-val">175 lbs</strong>
+          </div>
+          <input type="range" id="bc-weight" min="80" max="350" step="1" value="175" class="dxf-calc-slider" oninput="updateBC()">
+          <div class="dxf-calc-input-range"><span>80 lbs</span><span>350 lbs</span></div>
+        </div>
+        <div class="dxf-calc-input-group">
+          <div class="dxf-calc-input-header">
+            <span>Gordura corporal %</span>
+            <strong id="bc-bf-val">18%</strong>
+          </div>
+          <input type="range" id="bc-bf" min="5" max="60" step="0.5" value="18" class="dxf-calc-slider" oninput="updateBC()">
+          <div class="dxf-calc-input-range"><span>5%</span><span>60%</span></div>
+        </div>
+      </div>
+
+      <div class="dxf-calc-results" style="grid-template-columns:1fr 1fr;">
+        <div class="dxf-calc-result-card">
+          <div class="dxf-calc-result-value" id="bc-lean">143 lbs</div>
+          <div class="dxf-calc-result-label">massa magra</div>
+        </div>
+        <div class="dxf-calc-result-card">
+          <div class="dxf-calc-result-value dxf-calc-result-risk" id="bc-tier" style="font-size:28px;">Bom</div>
+          <div class="dxf-calc-result-label">nível de gordura</div>
+        </div>
+      </div>
+
+      <div class="dxf-calc-threshold">
+        <div class="dxf-calc-gradient-track" style="background:linear-gradient(to right,#E74C3C 0%,#e07b2a 25%,#f5c518 48%,#46a5fc 72%,#27AE60 100%);">
+          <div class="dxf-calc-marker" id="bc-marker" style="left:70%;"></div>
+        </div>
+        <div class="dxf-calc-bar-labels">
+          <span>Atenção</span><span>Regular</span><span>Bom</span><span>Ótimo</span><span>Excelente</span>
+        </div>
+      </div>
+
+      <div class="dxf-calc-context" id="bc-context"></div>
+
+      <div class="dxf-calc-cta-wrap">
+        <a href="#" class="dxf-calc-cta" data-tf-popup="JPjo4AgU">Obtenha seus números reais com DexaFit</a>
+      </div>
+      <div class="dxf-calc-caption">Normas de gordura corporal por idade e sexo (ACSM). DEXA mede gordura corporal real com precisão de ±2%. Sem estimativas por fórmulas.</div>
+    </div>
+
+    <!-- ── PANEL 2: METABOLIC BUFFER ── -->
+    <div class="dxf-calc-wrap dxf-calc-panel" id="panel-metabolic-buffer">
+      <p class="dxf-calc-intro">Sua massa magra funciona como um escudo metabólico contra a gordura visceral. Quanto mais massa magra você carrega, maior a capacidade do seu corpo de processar glicose, mantendo a gordura visceral sob controle. Reduzir a gordura visceral continua sendo o objetivo, mas a massa magra é sua defesa.</p>
+
+      <div class="dxf-calc-inputs">
+        <div class="dxf-calc-input-group">
+          <div class="dxf-calc-input-header">
+            <span>Massa magra</span>
             <strong id="lmvat-lean-val">130 lbs</strong>
           </div>
-          <input type="range" id="lmvat-lean" min="60" max="220" step="1" value="130" class="dxf-calc-slider" oninput="updateLMVAT()">
+          <input type="range" id="lmvat-lean" min="60" max="220" step="1" value="200" class="dxf-calc-slider" oninput="updateLMVAT()">
           <div class="dxf-calc-input-range"><span>60 lbs</span><span>220 lbs</span></div>
         </div>
         <div class="dxf-calc-input-group">
           <div class="dxf-calc-input-header">
-            <span>Visceral fat</span>
+            <span>Gordura visceral</span>
             <strong id="lmvat-vat-val">1.5 lbs</strong>
           </div>
-          <input type="range" id="lmvat-vat" min="0.1" max="6" step="0.1" value="1.5" class="dxf-calc-slider" oninput="updateLMVAT()">
+          <input type="range" id="lmvat-vat" min="0.1" max="6" step="0.1" value="1.0" class="dxf-calc-slider" oninput="updateLMVAT()">
           <div class="dxf-calc-input-range"><span>0.1 lbs</span><span>6.0 lbs</span></div>
         </div>
       </div>
 
-      <div class="dxf-calc-results">
+      <div class="dxf-calc-results" style="grid-template-columns:1fr 1fr;">
         <div class="dxf-calc-result-card">
-          <div class="dxf-calc-result-value" id="lmvat-ratio">1.94</div>
-          <div class="dxf-calc-result-label">log₁₀(LM ÷ VAT)</div>
+          <div class="dxf-calc-result-value" id="lmvat-ratio">2.3</div>
+          <div class="dxf-calc-result-label">Proporção Magra-VAT*</div>
         </div>
         <div class="dxf-calc-result-card">
-          <div class="dxf-calc-result-value dxf-calc-result-risk" id="lmvat-risk">Lower Risk</div>
-          <div class="dxf-calc-result-label">metabolic risk level</div>
-        </div>
-        <div class="dxf-calc-result-card">
-          <div class="dxf-calc-result-value" id="lmvat-raw">87:1</div>
-          <div class="dxf-calc-result-label">lean-to-visceral ratio</div>
+          <div class="dxf-calc-result-value dxf-calc-result-risk" id="lmvat-risk">Escudo Forte</div>
+          <div class="dxf-calc-result-label">nível de risco metabólico</div>
         </div>
       </div>
 
@@ -1164,20 +1274,79 @@
           <div class="dxf-calc-bar-threshold"></div>
         </div>
         <div class="dxf-calc-bar-labels">
-          <span>Insulin Resistant</span>
-          <span class="dxf-calc-bar-threshold-label">1.80 threshold</span>
-          <span>Strong Buffer</span>
+          <span>Resistência à Insulina</span>
+          <span class="dxf-calc-bar-threshold-label">limiar 1,80</span>
+          <span>Escudo Forte</span>
         </div>
       </div>
 
       <div class="dxf-calc-context" id="lmvat-context"></div>
 
       <div class="dxf-calc-cta-wrap">
-        <a href="#" class="dxf-calc-cta" data-tf-popup="JPjo4AgU">Get your real numbers with DexaFit</a>
+        <a href="#" class="dxf-calc-cta" data-tf-popup="JPjo4AgU">Obtenha seus números reais com DexaFit</a>
+      </div>
+      <div class="dxf-calc-caption">* A proporção magra-VAT mostra quanto de massa magra você carrega em relação à gordura visceral. É transformada logaritmicamente para comparações mais úteis entre diferentes tipos corporais. Abaixo de 1,80 indica território de resistência à insulina.</div>
+    </div>
+
+    <!-- ── PANEL 3: VO₂ MAX ── -->
+    <div class="dxf-calc-wrap dxf-calc-panel" id="panel-vo2max">
+      <p class="dxf-calc-intro">VO₂ Max é o preditor mais forte de longevidade. Uma diferença de 5× na mortalidade separa os quintis de menor e maior condicionamento. Onde você está?</p>
+
+      <div class="dxf-sex-toggle">
+        <button class="dxf-sex-btn active" id="vo2-btn-m" onclick="setVO2Sex('male')">Masculino</button>
+        <button class="dxf-sex-btn" id="vo2-btn-f" onclick="setVO2Sex('female')">Feminino</button>
       </div>
 
-      <div class="dxf-calc-caption">Shao et al. 2023, NHANES (n=4,981). Log-transformed ratio is comparable across body sizes. Below 1.80 = insulin resistance territory.</div>
+      <div class="dxf-age-btns">
+        <button class="dxf-age-btn active" onclick="setVO2Age(20)">20s</button>
+        <button class="dxf-age-btn" onclick="setVO2Age(30)">30s</button>
+        <button class="dxf-age-btn" onclick="setVO2Age(40)">40s</button>
+        <button class="dxf-age-btn" onclick="setVO2Age(50)">50s</button>
+        <button class="dxf-age-btn" onclick="setVO2Age(60)">60s</button>
+        <button class="dxf-age-btn" onclick="setVO2Age(70)">70s</button>
+      </div>
+
+      <div class="dxf-calc-inputs">
+        <div class="dxf-calc-input-group">
+          <div class="dxf-calc-input-header">
+            <span>VO₂ Max</span>
+            <strong><span id="vo2-value">35.0</span> ml/kg/min</strong>
+          </div>
+          <input type="range" id="vo2-slider" min="15" max="60" step="0.5" value="35" class="dxf-calc-slider" oninput="updateVO2Calc()">
+          <div class="dxf-calc-input-range"><span>15</span><span>60 ml/kg/min</span></div>
+        </div>
+      </div>
+
+      <div class="dxf-vo2-result-row">
+        <div class="dxf-calc-result-card">
+          <div class="dxf-calc-result-value" id="vo2-percentile" style="font-size:32px;">—</div>
+          <div class="dxf-calc-result-label">percentil</div>
+        </div>
+        <div class="dxf-calc-result-card">
+          <div class="dxf-calc-result-value dxf-calc-result-risk" id="vo2-tier" style="font-size:22px;">Médio</div>
+          <div class="dxf-calc-result-label">nível de aptidão</div>
+        </div>
+        <div class="dxf-calc-result-card">
+          <div class="dxf-calc-result-value" id="vo2-mortality" style="font-size:32px;">—</div>
+          <div class="dxf-calc-result-label">redução de mortalidade vs 20% inferior</div>
+        </div>
+      </div>
+
+      <div class="dxf-calc-threshold">
+        <div class="dxf-pct-bar-track">
+          <div class="dxf-pct-bar-fill" id="vo2-pct-bar"></div>
+        </div>
+        <div class="dxf-calc-bar-labels"><span>Baixo</span><span>Médio</span><span>Elite</span></div>
+      </div>
+
+      <div class="dxf-calc-context" id="vo2-context"></div>
+
+      <div class="dxf-calc-cta-wrap">
+        <a href="#" class="dxf-calc-cta" data-tf-popup="JPjo4AgU">Testar meu VO₂ Max com DexaFit</a>
+      </div>
+      <div class="dxf-calc-caption">Mandsager et al., JAMA 2018. Percentis derivados dos dados populacionais DexaFit por idade e sexo.</div>
     </div>
+
   </div>
 </section>
 
@@ -1188,8 +1357,8 @@
 <section id="get-started" class="dxf-section dxf-section--white">
   <div class="dxf-container">
     <div class="dxf-section-header dxf-reveal">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Get Started</span>
-      <h2><span class="dxf-accent">Three Ways In</span></h2>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Comece Agora</span>
+      <h2><span class="dxf-accent">Três Formas de Entrar</span></h2>
     </div>
 
     <div class="dxf-three-ways__grid dxf-reveal">
@@ -1201,10 +1370,9 @@
             <circle cx="12" cy="10" r="3"/>
           </svg>
         </div>
-        <span class="dxf-eyebrow" style="justify-content:flex-start;"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Coming Soon</span>
-        <h3>Be first <span class="dxf-accent">to know.</span></h3>
-        <p>DexaFit is expanding across Brasil. Register your city and we'll reach out the moment testing is available near you.</p>
-        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Notify Me</button>
+        <h3>Seja o primeiro <span class="dxf-accent">a saber.</span></h3>
+        <p>DexaFit está expandindo pelo Brasil. Registre sua cidade e entraremos em contato assim que os testes estiverem disponíveis perto de você.</p>
+        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Seja o Primeiro a Saber</button>
       </div>
 
       <div class="dxf-path-card">
@@ -1214,10 +1382,9 @@
             <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M8 10h.01M16 10h.01"/>
           </svg>
         </div>
-        <span class="dxf-eyebrow" style="justify-content:flex-start;"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Licensing</span>
-        <h3>Open a <span class="dxf-accent">DexaFit.</span></h3>
-        <p>Bring precision health to your city. You get the brand, protocols, and a decade of operational expertise. You own your business.</p>
-        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Explore Licensing</button>
+        <h3>Abra um <span class="dxf-accent">DexaFit.</span></h3>
+        <p>Leve saúde de precisão à sua cidade. Você recebe a marca, os protocolos e nossa expertise operacional. O negócio é seu.</p>
+        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Abra um DexaFit</button>
       </div>
 
       <div class="dxf-path-card">
@@ -1226,10 +1393,9 @@
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
           </svg>
         </div>
-        <span class="dxf-eyebrow" style="justify-content:flex-start;"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />Integration</span>
-        <h3>Add DexaFit into <span class="dxf-accent">your practice.</span></h3>
-        <p>Clinics and sports medicine practices already integrate DexaFit. Give your clients unmatched precision.</p>
-        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Explore Integration</button>
+        <h3>Integre DexaFit à <span class="dxf-accent">sua operação.</span></h3>
+        <p>Academias, clínicas, centros de performance: integre DexaFit ao seu negócio ou prática existente sem precisar construir do zero.</p>
+        <button class="dxf-btn" data-tf-popup="JPjo4AgU">Integre DexaFit</button>
       </div>
 
     </div>
@@ -1241,8 +1407,8 @@
      CITIES
      ═══════════════════════════════════════════════════ -->
 <div class="dxf-cities">
-  <p class="dxf-cities__label">Where DexaFit is expanding in Brasil</p>
-  <p class="dxf-cities__sub">Tier 1 markets launching first. Click your city to register interest.</p>
+  <p class="dxf-cities__label">Onde DexaFit Está Expandindo no Brasil</p>
+  <p class="dxf-cities__sub">Clique na sua cidade para registrar interesse.</p>
   <div class="dxf-cities__tier">
     <button class="dxf-chip-btn dxf-chip-btn--tier1" data-tf-popup="JPjo4AgU">São Paulo</button>
     <button class="dxf-chip-btn dxf-chip-btn--tier1" data-tf-popup="JPjo4AgU">Brasília</button>
@@ -1262,7 +1428,7 @@
     <button class="dxf-chip-btn" data-tf-popup="JPjo4AgU">Londrina</button>
     <button class="dxf-chip-btn" data-tf-popup="JPjo4AgU">Goiânia</button>
   </div>
-  <p class="dxf-cities__cta">Don't see your city? <button data-tf-popup="JPjo4AgU">Tell us you're interested →</button></p>
+  <p class="dxf-cities__cta">Não vê sua cidade? <button data-tf-popup="JPjo4AgU">Nos diga que tem interesse →</button></p>
 </div>
 
 
@@ -1273,19 +1439,19 @@
     <div class="dxf-trust__inner dxf-reveal">
       <div class="dxf-trust__stat">
         <span class="dxf-trust__num">98%</span>
-        <span class="dxf-trust__label">DEXA scan<br>accuracy</span>
+        <span class="dxf-trust__label">precisão do<br>DEXA scan</span>
       </div>
       <div class="dxf-trust__stat">
         <span class="dxf-trust__num">#1</span>
-        <span class="dxf-trust__label">Choice for<br>longevity data</span>
+        <span class="dxf-trust__label">Escolha para<br>Longevidade</span>
       </div>
       <div class="dxf-trust__stat">
         <span class="dxf-trust__num">4</span>
-        <span class="dxf-trust__label">DexaFit is in 4 continents<br>and is expanding</span>
+        <span class="dxf-trust__label">DexaFit está em 4 continentes<br>e continua expandindo</span>
       </div>
       <div class="dxf-trust__stat">
         <span class="dxf-trust__num">2011</span>
-        <span class="dxf-trust__label">Decades of<br>real-world results</span>
+        <span class="dxf-trust__label">Décadas de<br>resultados reais</span>
       </div>
     </div>
   </div>
@@ -1297,8 +1463,8 @@
 <section class="dxf-section dxf-section--alt">
   <div class="dxf-container">
     <div class="dxf-section-header dxf-reveal">
-      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />What People Are Saying</span>
-      <h2>Real results. <span class="dxf-accent">Real people.</span></h2>
+      <span class="dxf-eyebrow"><img src="assets/images/bug.svg" class="dxf-eyebrow-icon" alt="" />O Que as Pessoas Estão Dizendo</span>
+      <h2>Resultados reais. <span class="dxf-accent">Pessoas reais.</span></h2>
     </div>
     <div class="dxf-testimonials-grid dxf-reveal">
       <div class="dxf-testimonial">
@@ -1329,8 +1495,8 @@
      ═══════════════════════════════════════════════════ -->
 <section class="dxf-final-cta">
   <div class="dxf-container">
-    <h2>Ready to know <span class="dxf-accent--white">your numbers?</span></h2>
-    <p>Start here. We'll take it from there.</p>
+    <h2>Pronto para conhecer <span class="dxf-accent--white">seus números?</span></h2>
+    <p>Comece aqui. A gente cuida do resto.</p>
     <div class="dxf-btn-group" style="justify-content: center;">
       <button class="dxf-btn" data-tf-popup="JPjo4AgU">Get DexaFit in Brasil</button>
     </div>
@@ -1346,10 +1512,10 @@
     <div class="dxf-footer__logo">
       <img src="assets/images/Brasil.png" alt="DexaFit Brasil" style="filter: none;" />
     </div>
-    <p class="dxf-footer__about">Precision health testing for people who want to know what they're made of. Coming to Brasil, starting in São Paulo.</p>
+    <p class="dxf-footer__about">Testes de saúde de precisão para quem quer saber do que é feito. Chegando ao Brasil.</p>
     <div class="dxf-footer__bottom">
       <p class="dxf-footer__copy">
-        &copy; 2026 DexaFit. All rights reserved.
+        &copy; 2026 DexaFit. Todos os direitos reservados.
         &nbsp;&middot;&nbsp;
         <a href="https://www.dexafit.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
         &nbsp;&middot;&nbsp;
@@ -1477,20 +1643,19 @@
     document.getElementById('lmvat-vat-val').textContent = vat.toFixed(1)+' lbs';
     var raw = lm/vat, log = Math.log10(raw);
     document.getElementById('lmvat-ratio').textContent = log.toFixed(2);
-    document.getElementById('lmvat-raw').textContent = raw.toFixed(0)+':1';
     var level, color;
-    if(log < 1.50){ level='High Risk'; color='#E74C3C'; }
-    else if(log < 1.80){ level='Moderate Risk'; color='#F39C12'; }
-    else if(log < 2.20){ level='Lower Risk'; color='#46a5fc'; }
-    else { level='Strong Buffer'; color='#27AE60'; }
+    if(log < 1.50){ level='Alto Risco'; color='#E74C3C'; }
+    else if(log < 1.80){ level='Risco Moderado'; color='#F39C12'; }
+    else if(log < 2.20){ level='Risco Reduzido'; color='#46a5fc'; }
+    else { level='Escudo Forte'; color='#27AE60'; }
     var rEl = document.getElementById('lmvat-risk');
     rEl.textContent = level; rEl.style.color = color;
     document.getElementById('lmvat-bar').style.width = Math.max(0,Math.min(100,(log-1.2)/(2.5-1.2)*100))+'%';
     var ctx = '';
-    if(log < 1.50) ctx='Your ratio suggests significant visceral fat accumulation relative to muscle mass. Focus on building lean muscle and reducing visceral fat.';
-    else if(log < 1.80) ctx='Your balance is moderate. There\'s room to build more protective lean mass or reduce visceral fat load.';
-    else if(log < 2.20) ctx='Strong metabolic balance. Your lean mass provides good buffering against visceral fat-related risks.';
-    else ctx='Excellent ratio. Your muscle mass significantly buffers you against metabolic dysfunction — a protective indicator for long-term health.';
+    if(log < 1.50) ctx='Sua proporção indica acúmulo significativo de gordura visceral em relação à massa muscular. Foque em construir massa magra e reduzir a gordura visceral.';
+    else if(log < 1.80) ctx='Seu equilíbrio é moderado. Há espaço para construir mais massa magra protetora ou reduzir a carga de gordura visceral.';
+    else if(log < 2.20) ctx='Equilíbrio metabólico forte. Sua massa magra oferece boa proteção contra os riscos relacionados à gordura visceral.';
+    else ctx='Proporção excelente. Sua massa muscular protege significativamente contra a disfunção metabólica: um indicador positivo para a saúde de longo prazo.';
     document.getElementById('lmvat-context').textContent = ctx;
   };
   window.addEventListener('load', updateLMVAT);
@@ -1498,6 +1663,7 @@
 </script>
 
 <script>
+  // Header nav — active pill on click only (no active state on load)
   document.querySelectorAll('.dxf-nb-pill').forEach(function(link) {
     link.addEventListener('click', function() {
       document.querySelectorAll('.dxf-nb-pill').forEach(function(l) { l.classList.remove('active'); });
@@ -1505,6 +1671,178 @@
     });
   });
 </script>
+
+<script>
+// ── CALCULATOR TAB SWITCHING ──
+function switchCalcTab(panel) {
+  document.querySelectorAll('.dxf-calc-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.panel === panel);
+  });
+  document.querySelectorAll('.dxf-calc-panel').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'panel-' + panel);
+  });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'calculator_tab_click', { tab_name: panel });
+  }
+  if (panel === 'metabolic-buffer') updateLMVAT();
+  if (panel === 'vo2max') updateVO2Calc();
+  if (panel === 'body-comp') updateBC();
+}
+document.querySelectorAll('.dxf-calc-tab').forEach(function(btn) {
+  btn.addEventListener('click', function() { switchCalcTab(this.dataset.panel); });
+});
+
+
+// ── BODY COMP CALCULATOR ──
+var bcSex = 'male';
+// ACSM body fat % norms: [excellent_max, good_max, fair_max, poor_max]
+var bfNorms = {
+  male:   { 20:[11,13,20,28], 30:[12,15,21,29], 40:[14,17,24,31], 50:[15,18,25,33], 60:[16,19,25,33] },
+  female: { 20:[16,19,28,36], 30:[17,20,29,37], 40:[18,21,30,38], 50:[19,22,31,39], 60:[20,23,32,40] }
+};
+
+function setBCSex(s) {
+  bcSex = s;
+  document.getElementById('bc-btn-m').classList.toggle('active', s === 'male');
+  document.getElementById('bc-btn-f').classList.toggle('active', s === 'female');
+  updateBC();
+}
+
+function updateBC() {
+  var age    = parseInt(document.getElementById('bc-age').value);
+  var weight = parseInt(document.getElementById('bc-weight').value);
+  var bf     = parseFloat(document.getElementById('bc-bf').value);
+  document.getElementById('bc-age-val').textContent    = age;
+  document.getElementById('bc-weight-val').textContent = weight + ' lbs';
+  document.getElementById('bc-bf-val').textContent     = bf.toFixed(1) + '%';
+
+  var lean = Math.round(weight * (1 - bf / 100));
+  document.getElementById('bc-lean').textContent = lean + ' lbs';
+
+  var decade = Math.min(60, Math.floor(age / 10) * 10);
+  if (decade < 20) decade = 20;
+  var norms = bfNorms[bcSex][decade] || bfNorms[bcSex][60];
+  var excellent = norms[0], good = norms[1], fair = norms[2], poor = norms[3];
+
+  var tier, tierColor, markerPct, ctx;
+  if (bf <= excellent) {
+    tier = 'Excelente'; tierColor = '#27AE60'; markerPct = 90;
+    ctx = 'Composição corporal de alto nível para sua idade e sexo. Sua proporção de massa magra para gordura está associada a uma saúde metabólica forte e longevidade.';
+  } else if (bf <= good) {
+    tier = 'Ótimo'; tierColor = '#46a5fc'; markerPct = 70;
+    ctx = 'Ótima composição corporal para sua idade e sexo. Você está em uma faixa saudável com espaço para alcançar Excelente com treino direcionado.';
+  } else if (bf <= fair) {
+    tier = 'Bom'; tierColor = '#f5c518'; markerPct = 50;
+    ctx = 'Boa composição corporal para seu perfil. Pequenas melhorias na massa magra ou na perda de gordura deslocariam significativamente seu perfil de risco metabólico.';
+  } else if (bf <= poor) {
+    tier = 'Regular'; tierColor = '#e07b2a'; markerPct = 30;
+    ctx = 'Abaixo da média para sua idade e sexo. Priorizar treino de resistência e uma dieta rica em proteínas pode mudar isso mais do que a maioria das pessoas espera.';
+  } else {
+    tier = 'Atenção'; tierColor = '#E74C3C'; markerPct = 10;
+    ctx = 'Gordura corporal elevada em relação à sua idade e sexo. Esta faixa está associada a risco metabólico e cardiovascular elevado. Conhecer seus números exatos é o primeiro passo.';
+  }
+
+  document.getElementById('bc-tier').textContent   = tier;
+  document.getElementById('bc-tier').style.color   = tierColor;
+  document.getElementById('bc-marker').style.left  = markerPct + '%';
+  document.getElementById('bc-context').textContent = ctx;
+}
+updateBC();
+
+// ── VO₂ MAX CALCULATOR ──
+var vo2Data = {
+  male: {
+    20: { p20:35.9, p40:41.1, p50:43.3, p60:45.6, p80:50.8, low:28.5, high:55.0 },
+    30: { p20:34.4, p40:39.4, p50:41.6, p60:43.8, p80:48.7, low:27.3, high:53.6 },
+    40: { p20:32.8, p40:37.5, p50:39.5, p60:41.7, p80:46.0, low:26.0, high:50.4 },
+    50: { p20:29.9, p40:34.8, p50:36.8, p60:38.5, p80:42.7, low:24.4, high:47.0 },
+    60: { p20:27.1, p40:31.5, p50:33.2, p60:35.4, p80:39.5, low:21.8, high:43.5 },
+    70: { p20:24.2, p40:28.4, p50:29.8, p60:32.2, p80:35.1, low:20.2, high:40.5 }
+  },
+  female: {
+    20: { p20:28.5, p40:33.8, p50:36.0, p60:38.2, p80:42.0, low:22.8, high:48.2 },
+    30: { p20:27.0, p40:32.7, p50:34.5, p60:36.7, p80:40.7, low:21.6, high:47.6 },
+    40: { p20:25.2, p40:29.9, p50:32.1, p60:34.2, p80:38.7, low:20.5, high:45.2 },
+    50: { p20:23.9, p40:28.0, p50:29.8, p60:31.6, p80:35.9, low:18.5, high:42.4 },
+    60: { p20:22.3, p40:25.8, p50:27.2, p60:28.6, p80:31.6, low:17.5, high:38.1 },
+    70: { p20:20.8, p40:22.4, p50:23.1, p60:25.1, p80:27.4, low:18.3, high:31.4 }
+  }
+};
+var vo2Sex = 'male', vo2Age = 20;
+
+function setVO2Sex(s) {
+  vo2Sex = s;
+  document.getElementById('vo2-btn-m').classList.toggle('active', s === 'male');
+  document.getElementById('vo2-btn-f').classList.toggle('active', s === 'female');
+  updateVO2Calc();
+}
+
+function setVO2Age(a) {
+  vo2Age = a;
+  var ages = [20,30,40,50,60,70];
+  document.querySelectorAll('.dxf-age-btn').forEach(function(btn, i) {
+    btn.classList.toggle('active', ages[i] === a);
+  });
+  updateVO2Calc();
+}
+
+function updateVO2Calc() {
+  var slider = document.getElementById('vo2-slider');
+  if (!slider) return;
+  var vo2 = parseFloat(slider.value);
+  var d = vo2Data[vo2Sex][vo2Age];
+  document.getElementById('vo2-value').textContent = vo2.toFixed(1);
+
+  var pct;
+  if (vo2 <= d.p20)      pct = Math.max(1, Math.round((vo2 - d.low)  / (d.p20 - d.low)  * 20));
+  else if (vo2 <= d.p40) pct = 20 + Math.round((vo2 - d.p20) / (d.p40 - d.p20) * 20);
+  else if (vo2 <= d.p50) pct = 40 + Math.round((vo2 - d.p40) / (d.p50 - d.p40) * 10);
+  else if (vo2 <= d.p60) pct = 50 + Math.round((vo2 - d.p50) / (d.p60 - d.p50) * 10);
+  else if (vo2 <= d.p80) pct = 60 + Math.round((vo2 - d.p60) / (d.p80 - d.p60) * 20);
+  else pct = Math.min(99, 80 + Math.round((vo2 - d.p80) / (d.high - d.p80) * 19));
+  pct = Math.max(1, Math.min(99, pct));
+
+  var tier, tierColor;
+  if (pct < 20)      { tier = 'Baixo';            tierColor = '#E74C3C'; }
+  else if (pct < 40) { tier = 'Abaixo da Média'; tierColor = '#e07b2a'; }
+  else if (pct < 60) { tier = 'Médio';            tierColor = '#f5c518'; }
+  else if (pct < 80) { tier = 'Acima da Média';  tierColor = '#46a5fc'; }
+  else if (pct < 95) { tier = 'Alto';             tierColor = '#27AE60'; }
+  else               { tier = 'Elite';            tierColor = '#27AE60'; }
+
+  var bottomVO2 = d.low + (d.p20 - d.low) * 0.5;
+  var metDiff = (vo2 - bottomVO2) / 3.5;
+  var mortalityReduction = metDiff > 0 ? Math.round((1 - Math.pow(0.86, metDiff)) * 100) : 0;
+
+  var suffix = 'º';
+  document.getElementById('vo2-percentile').textContent  = pct + suffix;
+  document.getElementById('vo2-tier').textContent        = tier;
+  document.getElementById('vo2-tier').style.color        = tierColor;
+  document.getElementById('vo2-mortality').textContent   = mortalityReduction > 0 ? '-' + mortalityReduction + '%' : '—';
+  document.getElementById('vo2-pct-bar').style.width     = pct + '%';
+
+  var ctx = '';
+  if (pct < 20)      ctx = 'Você está no quintil de menor condicionamento. Mesmo uma pequena melhora aqui, como caminhadas regulares, gera o maior benefício de mortalidade por MET ganho.';
+  else if (pct < 40) ctx = 'Abaixo da média para sua idade e sexo. Entrar na faixa média reduziria significativamente o risco de mortalidade por todas as causas.';
+  else if (pct < 60) ctx = 'No meio do caminho para seu perfil. Treino aeróbico consistente pode levá-lo acima da média em 3 a 6 meses.';
+  else if (pct < 80) ctx = 'Acima da média. Você já supera a maioria das pessoas da sua idade. O treino contínuo mantém e amplia essa vantagem.';
+  else if (pct < 95) ctx = 'Alto condicionamento. Você está no quintil superior. O benefício de mortalidade neste nível é substancial: cerca de metade do risco do quintil inferior.';
+  else               ctx = 'Condicionamento de nível elite. Entre os mais aptos para sua idade e sexo. Nenhum limite superior de benefício foi observado.';
+  document.getElementById('vo2-context').textContent = ctx;
+}
+</script>
+
+<style>
+.dxf-lang-switcher{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;gap:4px;background:#fff;border-radius:100px;padding:5px;box-shadow:0 4px 20px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.08);}
+.dxf-lang-btn{padding:8px 14px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;color:#525252;transition:all 0.18s;white-space:nowrap;}
+.dxf-lang-btn.active{background:#46a5fc;color:#fff;}
+.dxf-lang-btn:not(.active):hover{background:#f5f5f7;color:#46a5fc;}
+</style>
+<div class="dxf-lang-switcher" role="navigation" aria-label="Seletor de idioma">
+  <a href="/" class="dxf-lang-btn" id="lang-pt" hreflang="pt-BR">🇧🇷 PT</a>
+  <a href="/en/" class="dxf-lang-btn" id="lang-en" hreflang="en">🇺🇸 EN</a>
+</div>
+<script>(function(){var p=window.location.pathname;document.getElementById(p.startsWith('/en')?'lang-en':'lang-pt').classList.add('active');})()</script>
 
 </body>
 </html>
