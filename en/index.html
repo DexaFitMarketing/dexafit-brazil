@@ -177,7 +177,11 @@
     }
     .dxf-hero > * { position: relative; z-index: 1; }
     @media (min-width: 769px) { .dxf-hero { background-position: 0% 70%; } }
-    @media (min-width: 1025px) { .dxf-hero__main { grid-template-columns: 1.8fr 300px 240px; gap: 24px; } }
+    @media (min-width: 1025px) {
+      .dxf-hero__main { grid-template-columns: 1fr 220px 360px; gap: 32px; }
+      .dxf-hero__app-image { order: 3; }
+      .dxf-hero__data { order: 2; }
+    }
 
     .dxf-hero__main {
       display: grid; grid-template-columns: 1fr 340px 280px;
