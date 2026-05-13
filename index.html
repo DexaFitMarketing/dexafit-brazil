@@ -166,7 +166,7 @@
     /* ── HERO ── */
     .dxf-hero {
       position: relative;
-      background: url('assets/images/new-brasil-hero.jpeg') 25% 70% / cover no-repeat;
+      background: url('assets/images/new-brasil-hero.jpeg') center 70% / cover no-repeat;
       color: var(--white); overflow: hidden;
     }
     .dxf-hero::before {
@@ -540,6 +540,8 @@
       :root { --section-pad: 64px; }
       .dxf-hero__main { grid-template-columns: 1fr; }
       .dxf-hero__app-image { height: 280px; }
+      .dxf-hero__data { display: flex; }
+      .dxf-navbar__logo img { height: 44px !important; }
       .dxf-zigzag__item { grid-template-columns: 1fr; }
       .dxf-zigzag__item--flip .dxf-zigzag__media { order: unset; }
       .dxf-zigzag__item--flip .dxf-zigzag__body  { order: unset; }
