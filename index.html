@@ -166,7 +166,7 @@
     /* ── HERO ── */
     .dxf-hero {
       position: relative;
-      background: url('assets/images/new-brasil-hero.jpeg') center 70% / cover no-repeat;
+      background: url('assets/images/new-brasil-hero.jpeg') 25% 70% / cover no-repeat;
       color: var(--white); overflow: hidden;
     }
     .dxf-hero::before {
@@ -175,6 +175,8 @@
       z-index: 0;
     }
     .dxf-hero > * { position: relative; z-index: 1; }
+    @media (min-width: 769px) { .dxf-hero { background-position: 0% 70%; } }
+    @media (min-width: 1025px) { .dxf-hero__main { grid-template-columns: 1.8fr 300px 240px; gap: 24px; } }
 
     .dxf-hero__main {
       display: grid; grid-template-columns: 1fr 340px 280px;
